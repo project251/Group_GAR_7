@@ -18,7 +18,9 @@ public class Order {
   private String customerFirstName ;
  private String customerLastName ;
 
- 
+   // array to store the products 
+    List<Product> products = new ArrayList<Product>();
+
  
     public String getOrderId() {
         return orderId;
