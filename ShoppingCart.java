@@ -30,17 +30,23 @@ class ShoppingCart {
     
    
     public Product getProduct( int productId) {        
-  ListIterator<Product> iterator2 = cartItems.listIterator();
+  ListIterator<Product> cart = cartItems.listIterator();
        Product prod = null; 
-     while( iterator2.hasNext()) { 
-        prod = iterator2.next();
+     while( cart.hasNext()) { 
+        prod = cart.next();
         if(productId == prod.getID()) 
              return prod ;                }
      return null;     
     }
     
     
-    
+      public void updateQuantity(int quantity, int productId) {
+        Product product = getProduct(productId);
+        if (product != null) {
+            product.setQuantity(quantity);
+        }
+
+    }
 
 
     
