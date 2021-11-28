@@ -10,7 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
+public class ShoppingCart {
 
+    List<Product> cartItems = new ArrayList<Product>(); 
+    private float subTotal;
+    
     public ShoppingCart() {
     
     }
@@ -50,6 +54,18 @@ import java.util.ListIterator;
         }
 
     }
+
+     public double getSubtotal(){
+          ListIterator<Product> iterator2 = cartItems.listIterator();
+        this.subTotal = 0;
+        while (iterator2.hasNext()) {
+            Product item3 = iterator2.next();
+            this.subTotal = (float) (this.subTotal + (item3.getPrice() * item3.getQuantity()));
+        }
+        return this.subTotal;
+
+    }
+         
 
  
 }
