@@ -7,7 +7,6 @@ package pet;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -17,8 +16,8 @@ class ShoppingCart {
     List<Product> cartItems = new ArrayList<Product>();
     private float subTotal; 
     private int productID;
-    private Date dateAdded;
-
+ 
+}
 
     
 
@@ -37,12 +36,13 @@ class ShoppingCart {
        Product prod = null; 
      while( cart.hasNext()) { 
         prod = cart.next();
-        if(productId == prod.getID()) 
-             return prod ;                }
-     return null;     
-    }
-    
-    
+        if(productId == prod.getID()) {
+             return prod ;                
+           }
+      }
+     return null; 
+ }
+        
       public void updateQuantity(int quantity, int productId) {
         Product product = getProduct(productId);
         if (product != null) {
