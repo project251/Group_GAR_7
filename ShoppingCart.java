@@ -19,6 +19,9 @@ class ShoppingCart {
  
 }
 
+    public ShoppingCart() {
+    
+    }
     
 
     public List<Product> getCartItems() {
@@ -29,7 +32,12 @@ class ShoppingCart {
         cartItems.add(product);
     }
 
-    
+    public void removeProductById(int productId){
+        Product product=getProduct(productId);
+        if (product!=null){
+            cartItems.remove(product);
+        }
+    }
    
     public Product getProduct( int productId) {        
   ListIterator<Product> cart = cartItems.listIterator();
