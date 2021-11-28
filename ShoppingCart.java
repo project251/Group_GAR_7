@@ -22,6 +22,9 @@ class ShoppingCart {
 
     
 
+    public List<Product> getCartItems() {
+        return cartItems;
+    }
     
     private void addCartItem(Product product) {
         cartItems.add(product);
@@ -48,12 +51,5 @@ class ShoppingCart {
 
     }
 
-
-    
- public void printCartItems() {
-        for (Product prod: cartItems) {
-            System.out.println(prod.getName());
-        }
-    }
  
 }
