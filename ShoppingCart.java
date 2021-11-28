@@ -11,14 +11,6 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-class ShoppingCart {
-
-    List<Product> cartItems = new ArrayList<Product>();
-    private float subTotal; 
-    private int productID;
- 
-}
-
     public ShoppingCart() {
     
     }
@@ -41,11 +33,11 @@ class ShoppingCart {
    
     public Product getProduct( int productId) {        
   ListIterator<Product> cart = cartItems.listIterator();
-       Product prod = null; 
+       Product product = null; 
      while( cart.hasNext()) { 
-        prod = cart.next();
-        if(productId == prod.getID()) {
-             return prod ;                
+        product = cart.next();
+        if(productId == product.getID()) {
+             return product ;                
            }
       }
      return null; 
