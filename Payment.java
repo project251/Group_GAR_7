@@ -8,7 +8,7 @@ public class Payment {
 
     private String cardNo;  // Creadit Card Number
     private String cvvNo;   // cvv Number
-    private String expDate;
+    private String expDate; //expiry date
  
    public payment() {
 
@@ -30,11 +30,11 @@ public class Payment {
         this.cardNo = cardNo;
     }
 
-    public String getCvcNo() {
+    public String getCvvNo() {
         return cvcNo;
     }
 
-    public void setCvcNo(String cvcNo) {
+    public void setCvvNo(String cvcNo) {
         this.cvcNo = cvcNo;
     }
 
@@ -64,7 +64,7 @@ public class Payment {
     }
         
 
-         //checking if the max card number is 16
+    //checking if the max card number is 16
     public boolean checkCardNo(String cardNo) {
         if (cardNo.length() == 16) {
             if (isNumeric(cardNo)) {
@@ -76,7 +76,7 @@ public class Payment {
     }
         
 
-    //checking if the max cvv number is 3
+     //checking if the max cvv number is 3
      public boolean checkCVV(String cvv) {
         if (cvv.length() ==3) {
             if (isNumeric(cvv)) {
@@ -87,12 +87,14 @@ public class Payment {
     }
         
     
-         //checking if the max date(year&month) number is 3
-  public boolean checkExpDate(String month ,String year) {
+      //checking if the max date(year&month) number is less than 3
+      public boolean checkExpDate(String month ,String year) {
         if (month.length() < 3 && year.length() < 3 ) {
             
             if (isNumeric(month)&&isNumeric(year)) {
-                    
+                
+                
+                //checking that months within 12 and yesr more or equal 21
                 if(Integer.parseInt(month)< 13 && Integer.parseInt(year)>=21){
                 return true;
               
@@ -102,12 +104,6 @@ public class Payment {
         }
         return false;
     }
-
-
-
-   
-
-
 
 
 }
