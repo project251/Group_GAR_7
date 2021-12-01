@@ -1,7 +1,6 @@
 
 package SourceCode;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -28,17 +27,20 @@ public class ShoppingCart {
         }
     }
 
-    public void updateQuantity(int quantity, int productId) {
+   
+
+     public void updateQuantity(int quantity, int productId) {
         Product product = getProduct(productId);
         if (product != null) {
             product.setQuantity(quantity);
         }
 
     }
-
+    
+    
     public Product getProduct(int productId) {
-
-        ListIterator<Product> cart = cartItems.listIterator(); // java iterator to traverse cartItems array 
+       // java iterator to traverse cartItems array 
+        ListIterator<Product> cart = cartItems.listIterator();
         Product product = null;
         while (cart.hasNext()) {   
             product = cart.next();
