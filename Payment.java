@@ -21,7 +21,7 @@ public class Payment {
        
     }
 
-
+   // getters ans setters
     public String getCardNo() {
         return cardNo;
     }
@@ -45,7 +45,7 @@ public class Payment {
     public void setExpDate(String expDate) {
         this.expDate = expDate;
     }
-
+    // updating info method
  public void updateCeditCardInfo(String cardNo, String cvvNo, String expDate) {
         this.cardNo = cardNo;
         this.cvvNo = cvvNo;
