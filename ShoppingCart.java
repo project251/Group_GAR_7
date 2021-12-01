@@ -9,7 +9,8 @@ import java.util.ListIterator;
 public class ShoppingCart {
 
     List<Product> cartItems = new ArrayList<Product>(); // Array list for customer to add products to cart
-     public ShoppingCart() {
+  
+    public ShoppingCart() {
     }
 
     public List<Product> getCartItems() {
@@ -41,7 +42,7 @@ public class ShoppingCart {
         Product product = null;
         while (cart.hasNext()) {   
             product = cart.next();
-            if (productId == product.getID()) {
+        if (productId == product.getID()) {
                 return product;
             }
         }
