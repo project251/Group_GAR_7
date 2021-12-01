@@ -1,5 +1,5 @@
 
-package pet;
+package SourceCode;
 
 
 import java.util.ArrayList;
@@ -8,42 +8,26 @@ import java.util.ListIterator;
 
 public class ShoppingCart {
 
-    List<Product> cartItems = new ArrayList<Product>(); 
-    private float subTotal;
-    
-    public ShoppingCart() {
-    
+    List<Product> cartItems = new ArrayList<Product>(); // Array list for customer to add products to cart
+     public ShoppingCart() {
     }
-    
 
     public List<Product> getCartItems() {
         return cartItems;
     }
-    
-    private void addCartItem(Product product) {
+
+    public void addCartItem(Product product) {
         cartItems.add(product);
     }
 
-    public void removeProductById(int productId){
-        Product product=getProduct(productId);
-        if (product!=null){
+    public void removeProductByPID(int productId) {
+        Product product = getProduct(productId);
+        if (product != null) {
             cartItems.remove(product);
         }
     }
-   
-    public Product getProduct( int productId) {        
-  ListIterator<Product> cart = cartItems.listIterator();
-       Product product = null; 
-     while( cart.hasNext()) { 
-        product = cart.next();
-        if(productId == product.getID()) {
-             return product ;                
-           }
-      }
-     return null; 
- }
-        
-      public void updateQuantity(int quantity, int productId) {
+
+    public void updateQuantity(int quantity, int productId) {
         Product product = getProduct(productId);
         if (product != null) {
             product.setQuantity(quantity);
@@ -51,17 +35,19 @@ public class ShoppingCart {
 
     }
 
-     public double getSubtotal(){
-          ListIterator<Product> iterator2 = cartItems.listIterator();
-        this.subTotal = 0;
-        while (iterator2.hasNext()) {
-            Product item3 = iterator2.next();
-            this.subTotal = (float) (this.subTotal + (item3.getPrice() * item3.getQuantity()));
-        }
-        return this.subTotal;
+    public Product getProduct(int productId) {
 
+        ListIterator<Product> cart = cartItems.listIterator(); // java iterator to traverse cartItems array 
+        Product product = null;
+        while (cart.hasNext()) {   
+            product = cart.next();
+            if (productId == product.getID()) {
+                return product;
+            }
+        }
+        return null;
     }
-         
+
 
  
 }
