@@ -57,11 +57,11 @@ public class Product {
         Product product1 = new Product(111111, "nesting box", 50.0, 1);
         Product product2 = new Product(222222, "sunflower bird food", 20.25, 1);
         Product product3 = new Product(333333, "aspen bedding", 35.50, 1);
-
+         // to store products in store Array
         Product[] storeArray = {product1, product2, product3};
 
         int i = 0;
-        for (i = 0; i < 3; i++) {           // to store products in store Array
+        for (i = 0; i < 3; i++) {          
             if (id == storeArray[i].getID()) {
                 return storeArray[i];
             }
