@@ -1,23 +1,26 @@
 
 package pet;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class Order {
     
- private String orderId ;   
- private int shippingId ;
-
-    
-   // array to store the products 
-    List<Product> products = new ArrayList<Product>();
-
- public order(String orderId, int shippingId){
  
- this.orderId=orderId;
-     this.shippingId=shippingId;
- }
+    private String orderId;
+    private Date orderDate;
+
+    // array to store the products 
+    List<Product> products = new ArrayList<Product>();
+    
+
+
+    public Order(String id) {
+        orderId = id;
+    }
+
     public String getOrderId() {
         return orderId;
     }
@@ -26,14 +29,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-   
-
-    public int getShippingId() {
-        return shippingId;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setShippingId(int shippingId) {
-        this.shippingId = shippingId;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
 
