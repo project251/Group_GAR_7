@@ -66,11 +66,10 @@ public class Payment {
 
     //checking if the max card number is 16
     public boolean checkCardNo(String cardNo) {
-        if (cardNo.length() == 16) {
-            if (isNumeric(cardNo)) {
+        if (cardNo.length() == 16 && isNumeric(cardNo)) {
+          
                 return true;
-            }
-
+            
         }
         return false;
     }
@@ -78,10 +77,10 @@ public class Payment {
 
      //checking if the max cvv number is 3
      public boolean checkCVV(String cvv) {
-        if (cvv.length() ==3) {
-            if (isNumeric(cvv)) {
+        if (cvv.length() ==3 && isNumeric(cvv)) {
+      
                 return true;
-            }
+           
         }
         return false;
     }
