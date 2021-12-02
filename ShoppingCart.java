@@ -22,7 +22,7 @@ public class ShoppingCart {
 
     public void removeProductByPID(int productId) {
         Product product = getProduct(productId);
-        if (product != null) {
+        if (product != null) { //check if the product is stored
             cartItems.remove(product);
         }
     }
@@ -31,7 +31,7 @@ public class ShoppingCart {
 
      public void updateQuantity(int quantity, int productId) {
         Product product = getProduct(productId);
-        if (product != null) {
+        if (product != null) { //check if the product is stored
             product.setQuantity(quantity);
         }
 
