@@ -6,6 +6,7 @@ public class Product {
     private String productName;
     private double productPrice;
     private int quantity;
+static  ArrayList<Product> storeArray = new ArrayList<>();
 
     public Product() {
 
