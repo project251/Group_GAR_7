@@ -2,17 +2,16 @@
 package SourceCode;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ListIterator;
 
 public class ShoppingCart {
 
-    List<Product> cartItems = new ArrayList<Product>(); // Array list for customer to add products to cart
+    ArrayList<Product> cartItems = new ArrayList<>(); // Array list for customer to add products to cart
   
     public ShoppingCart() {
     }
 
-    public List<Product> getCartItems() {
+    public ArrayList<Product> getCartItems() {
         return cartItems;
     }
 
