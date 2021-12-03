@@ -1,12 +1,15 @@
 package SourceCode;
 
+import java.util.ArrayList;
+import java.util.ListIterator;
+
 public class Product {
 
     private int productID;
     private String productName;
     private double productPrice;
     private int quantity;
-static  ArrayList<Product> storeArray = new ArrayList<>();
+    static  ArrayList<Product> storeArray = new ArrayList<>();
 
     public Product() {
 
