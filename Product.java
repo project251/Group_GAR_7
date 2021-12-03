@@ -18,7 +18,18 @@ public class Product {
         quantity = itemQuantity;
 
     }
+    
+        public  void ourProducts(){
+        Product product1 = new Product(111111, "nesting box", 50.0, 1);
+        Product product2 = new Product(222222, "sunflower bird food", 20.25, 1);
+        Product product3 = new Product(333333, "aspen bedding", 35.50, 1);
+        // to store products in store Array
+        storeArray.add(product1);
+        storeArray.add(product2);
+        storeArray.add(product3);
+    }
 
+    //getters and setters
     public int getID() {
         return productID;
 
@@ -52,21 +63,17 @@ public class Product {
         return quantity;
     }
 
-    public Product storeProducts(int id) {
-
-        Product product1 = new Product(111111, "nesting box", 50.0, 1);
-        Product product2 = new Product(222222, "sunflower bird food", 20.25, 1);
-        Product product3 = new Product(333333, "aspen bedding", 35.50, 1);
-         // to store products in store Array
-        Product[] storeArray = {product1, product2, product3};
-
-        int i = 0;
-        for (i = 0; i < 3; i++) {          
-            if (id == storeArray[i].getID()) {
-                return storeArray[i];
+    public Product getProduct(int id) {
+// java iterator to traverse storeArray array 
+ ListIterator<Product> ourProducts = storeArray.listIterator(); 
+        Product product = null;
+        while (ourProducts.hasNext()) {   
+            product = ourProducts.next();
+            if (id == product.getID()) {
+                return product;
             }
         }
-        return storeArray[i];
+        return null;
     }
 
 }
